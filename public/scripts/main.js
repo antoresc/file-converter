@@ -216,11 +216,6 @@ async function handleConversion() {
     // Remove loading animation
     previewElement.removeChild(loadingContainer);
     
-    // Trigger conversion complete event for ad logic
-    window.dispatchEvent(new CustomEvent('conversionComplete', {
-      detail: { sourceFormat: currentFile.type, targetFormat }
-    }));
-    
   } catch (error) {
     showError(`Conversion error: ${error.message}`);
   }

@@ -164,23 +164,7 @@ button:active {
 
 /* Ad Banners */
 .ad-banner {
-  width: 100%;
-  min-height: 90px;
-  background-color: var(--gray-100);
-  border: 1px dashed var(--gray-300);
-  border-radius: var(--border-radius);
-  margin: 2rem 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: var(--gray-500);
-  font-size: 0.875rem;
-}
-
-.ad-banner::before {
-  content: "Advertisement Placeholder";
-  font-style: italic;
+  display: none;
 }
 
 /* Drop Zone */
@@ -736,11 +720,6 @@ footer {
   footer {
     background-color: var(--bg-secondary);
     border-top-color: var(--border-color);
-  }
-  
-  .ad-banner {
-    background-color: var(--bg-secondary);
-    border-color: var(--border-color);
   }
   
   .error-message {
