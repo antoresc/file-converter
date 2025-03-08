@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Converter | Modern Client-Side Conversion Tool</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234361ee' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z'%3E%3C/path%3E%3Cpolyline points='13 2 13 9 20 9'%3E%3C/polyline%3E%3Cpath d='M8 16l2-2 2 2 4-4'%3E%3C/path%3E%3C/svg%3E">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/converter.css">
+  <!-- Meta tags for SEO -->
+  <meta name="description" content="Free online file converter tool. Convert images, videos, and PDFs without uploading to a server. All processing happens in your browser.">
+  <meta name="keywords" content="file converter, image converter, video to gif, pdf to jpg, client-side">
+</head>
+<body>
+  <!-- AD SLOT 1: Header -->
+  <div class="ad-banner" id="ad-header"></div>
+  
+  <div class="container">
+    <h1>File Converter</h1>
+    
+    <div class="format-badges">
+      <div class="format-badge">JPG</div>
+      <div class="format-badge">PNG</div>
+      <div class="format-badge">WebP</div>
+      <div class="format-badge">MP4</div>
+      <div class="format-badge">GIF</div>
+      <div class="format-badge">PDF</div>
+    </div>
+    
+    <div class="card" id="dropZone">
+      <input type="file" id="fileInput" hidden>
+      <div class="drop-text">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="upload-icon">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="17 8 12 3 7 8"></polyline>
+          <line x1="12" y1="3" x2="12" y2="15"></line>
+        </svg>
+        <p>Drag files here or <button id="selectFile">Browse</button></p>
+        <span class="drop-subtitle">Supports JPG, PNG, WebP, MP4, PDF</span>
+      </div>
+      <div class="format-selection">
+        <label for="targetFormat">Convert to:</label>
+        <select id="targetFormat">
+          <option value="jpg">JPG</option>
+          <option value="png">PNG</option>
+          <option value="webp">WebP</option>
+          <option value="gif">GIF</option>
+        </select>
+      </div>
+    </div>
+    
+    <div id="preview-container" class="card hidden">
+      <h2>Preview</h2>
+      <div id="preview"></div>
+      <button id="convertBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="button-icon">
+          <path d="M17 3a2.85 2.85 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+        </svg>
+        Convert
+      </button>
+    </div>
+    
+    <div id="result-container" class="card hidden">
+      <h2>Converted File</h2>
+      <div id="result"></div>
+      <button id="downloadBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="button-icon">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        Download
+      </button>
+    </div>
+    
+    <!-- Features Section -->
+    <div class="features-section">
+      <h2>Why Use Our File Converter?</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feature-icon">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <h3>Client-Side Processing</h3>
+          <p>All conversions happen in your browser. No files are uploaded to any server.</p>
+        </div>
+        <div class="feature-card">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feature-icon">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+          <h3>Multiple Formats</h3>
+          <p>Convert between JPG, PNG, WebP, MP4, GIF, and PDF formats with ease.</p>
+        </div>
+        <div class="feature-card">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feature-icon">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+          </svg>
+          <h3>Fast Conversion</h3>
+          <p>Optimized algorithms ensure quick conversion without compromising quality.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- AD SLOT 2: Post-Conversion -->  
+    <div class="ad-banner" id="ad-results"></div>
+  </div>
+  
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+          <polyline points="13 2 13 9 20 9"></polyline>
+          <path d="M8 16l2-2 2 2 4-4"></path>
+        </svg>
+        <span>File Converter</span>
+      </div>
+      <p>All conversions happen directly in your browser. No files are uploaded to any server.</p>
+      <p>Supported formats: JPG, PNG, WebP, MP4, PDF</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+    <!-- AD SLOT 3: Footer -->
+    <div class="ad-banner" id="ad-footer"></div>
+    <div class="copyright">
+      © 2023 File Converter. All rights reserved.
+    </div>
+  </footer>
+  
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.4.120/build/pdf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.11.6/dist/ffmpeg.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/image-conversion@2.1.1/build/conversion.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
+  
+  <script type="module" src="./scripts/main.js"></script>
+</body>
+</html> 

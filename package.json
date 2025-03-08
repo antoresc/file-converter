@@ -1,0 +1,28 @@
+{
+  "name": "file-converter-web-app",
+  "version": "1.0.0",
+  "description": "Client-side file conversion web application",
+  "main": "public/index.html",
+  "scripts": {
+    "start": "serve public"
+  },
+  "dependencies": {
+    "@ffmpeg/ffmpeg": "^0.11.6",
+    "file-saver": "^2.0.5",
+    "image-conversion": "^2.1.1",
+    "pdfjs-dist": "^3.4.120",
+    "pdf-lib": "^1.17.1"
+  },
+  "devDependencies": {
+    "serve": "^14.2.1"
+  },
+  "keywords": [
+    "file-converter",
+    "image-conversion",
+    "pdf-to-jpg",
+    "mp4-to-gif",
+    "client-side"
+  ],
+  "author": "",
+  "license": "MIT"
+} 
